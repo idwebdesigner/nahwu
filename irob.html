@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<!-- Mirrored from byrushan.com/projects/ma/1-6-1/jquery/dark/breadcrumb-demo.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jul 2016 13:39:28 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Material Admin</title>
+
+        <!-- Vendor CSS -->
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+
+        <!-- CSS -->
+        <link href="css/app_1.min.css" rel="stylesheet">
+        <link href="css/app_2.min.css" rel="stylesheet">
+
+        <script src="js/h5utils.js"></script>
+        <script src="js/jquery-2.1.0.min.js"></script>
+        <script>$(function(){
+        $("#contentloader").load("content-message.html");
+        $("#contentloader2").load("content-message-count.html");
+        $("#contentloader3").load("content-right.html");
+        });</script>
+
+    </head>
+
+    <body>
+        <header id="header" class="clearfix">
+            <ul class="h-inner">
+                <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="hi-logo hidden-xs">
+                    <a href="index-2.html">Pangeran Nahwu & Shorof</a>
+                </li>
+
+                <li class="pull-right">
+                    <ul class="hi-menu">
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="#">
+                                <i class="him-icon zmdi zmdi-notifications-none"></i>
+                                <i class="him-counts"><span id="contentloader2"></span></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg pull-right">
+                                <div class="list-group list-group-light">
+                                    <div class="lg-header">
+                                        Messages
+                                    </div>
+
+                                    <article>
+                                      <p style="text-align:center;font-size:1em;"><span id="status"><span id="status"></span></p>
+                                      <ol id="state"></ol>
+                                    </article>
+                                    <script>
+                                    var statusElem  = document.getElementById('status'),
+                                        state               = document.getElementById('state');
+
+                                    function online(event) {
+                                      statusElem.className = navigator.onLine ? 'online' : 'offline';
+                                      statusElem.innerHTML = navigator.onLine ? '' : '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&#39;re offline, check network connection.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content required internet access.';
+                                      state.innerHTML += '&nbsp;';
+                                    }
+
+                                    addEvent(window, 'online', online);
+                                    addEvent(window, 'offline', online);
+                                    online({ type: 'ready' });
+                                    </script>
+
+                                    <div style="margin-top:-30px;" id="contentloader"></div>
+                                    <a class="view-more view-more-light" href="idwebdesigner.html">Powered by IDWEBDesigner</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
+                            <a data-toggle="dropdown" href="#">
+                                <i class="him-icon zmdi zmdi-favorite-outline"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="#"><i class="him-icon zmdi zmdi-more-vert"></i></a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="hidden-xs">
+                                    <a data-ma-action="fullscreen" href="#"><i class="zmdi zmdi-fullscreen"></i> Fullscreen</a>
+                                </li>
+                                <li>
+                                    <a data-ma-action="clear-localstorage" href="developer.html"><i class="zmdi zmdi-code"></i> Developer</a>
+                                </li>
+                                <li>
+                                    <a href="market://details?id=id.web.designer.nahwu.apps"><i class="zmdi zmdi-star"></i> Rating 5 bintang</a>
+                                </li>
+                                <li>
+                                    <a href="update.html"><i class="zmdi zmdi-refresh-sync"></i> Cek update</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="hidden-xs ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
+                            <a href="#"><i class="him-icon zmdi zmdi-comment-alt-text"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <section id="main">
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="zmdi zmdi-home"></i></a></li>
+                <li><a href="index.html"><i class="zmdi zmdi-folder-outline"></i></a></li>
+                <li class="active">Af'alul Khomsah</li>
+            </ol>
+
+            <aside id="sidebar" class="sidebar c-overflow">
+                <ul class="main-menu">
+                    <li class="mm-profile sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle" class="media">
+                            <img class="pull-left" src="img/nahwu-round.png" alt="">
+                            <div class="media-body">
+                                <small>Dikembangkan di </small>
+                                Pondok Pesantren Wahid Hasyim Yogyakarta
+                            </div>
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="#">Jl. Wahid Hasyim No.3 Gaten Condongcatur Depok Sleman Yogyakarta 55283</a>
+                            </li>
+                            <li>
+                                <a href="http://ppwahidhasyim.com">ppwahidhasyim.com</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-info-outline"></i> Tentang Aplikasi</a>
+
+                        <ul>
+                            <li><a href="tentang.html">Tentang Pangeran Nahwu <br/>& Shorof</a></li>
+                            <li><a href="project.html">Support This Project</a></li>
+                            <li><a href="idwebdesigner.html">Developer</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="wh.html"><i class="zmdi zmdi-home"></i> Pondok Pesantren Wahid Hasyim Yogyakarta</a></li>
+                    <li class="sub-menu toggled active">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-bookmark-outline"></i> Pendidikan Islam Modern</a>
+                        <ul>
+
+                            <li><a href="wh-mi.html">Madrasah Ibtida'iyah</a></li>
+                            <li><a href="wh-mts.html">Madrasah Tsanawiyah</a></li>
+                            <li><a href="wh-ma.html">Madrasah Aliyah</a></li>
+                            <li><a href="wh-sma.html">SMA Sains Depok</a></li>
+                            <li><a href="wh-tahfidz.html">Madrasah Hufadz wa Tafsir</a></li>
+                            <li><a href="wh-madin.html">Madrasah Diniyah</a></li>
+                            <li><a href="wh-aly.html">Ma'had Aly</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-code"></i> Developer</a>
+
+                        <ul>
+                            <li><a href="dwebdesigner.html">dev@designer.web.id</a></li>
+                            <li><a href="idwebdesigner.html">designer.web.id</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+            <aside id="chat" class="sidebar">
+
+                <div class="chat-search">
+                    <div class="fg-line">
+                        ISTILAH DALAM NAHWU SHOROF
+                    </div>
+                </div>
+
+                <div class="lg-body c-overflow">
+                    <div class="list-group">
+                        <div id="contentloader3"></div>
+                    </div>
+                </div>
+
+                                    <article>
+                                      <p style="margin-left:15px;font-size:0.7em;"><span id="status2"><span id="status"></span></p>
+                                      <ol id="state2"></ol>
+                                    </article>
+                                    <script>
+                                    var statusElem  = document.getElementById('status2'),
+                                        state               = document.getElementById('state2');
+
+                                    function online(event) {
+                                      statusElem.className = navigator.onLine ? 'online' : 'offline';
+                                      statusElem.innerHTML = navigator.onLine ? '' : '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&#39;re offline, check network connection.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content required internet access.';
+                                      state.innerHTML += '&nbsp;';
+                                    }
+
+                                    addEvent(window, 'online', online);
+                                    addEvent(window, 'offline', online);
+                                    online({ type: 'ready' });
+                                    </script>
+
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                        <h2 style="color:#666666;">EDIT TEKS</h2>
+
+                        <ul class="actions">
+                            <li class="dropdown action-show">
+                                    <a href="#" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu pull-right">
+                                        <p class="p-20" style="margin-bottom:-10px;">
+                                            Buat Aplikasi ini lebih baik dengan memperbaiki ejaan, teks typo, dsb.<br/><br/><a href="developer.html">Selengkapnya</a>
+                                        </p>
+                                    </div>
+                            <li>
+                                    <a href="#" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-transform"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu pull-right">
+                                        <p class="p-20" style="margin-bottom:-10px;">
+                                            Gabung dengan tim Developer IDWEBDesigner utk pengembangan fitur<br/><br/><a href="developer.html">Selengkapnya</a>
+                                        </p>
+                                    </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="javascript:window.location.reload();">Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="file.zip">Unduh file.zip</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html"><i class="zmdi zmdi-arrow-left"></i> Kembali</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>I'rob</h2>
+                        </div>
+
+                        <div class="card-body card-padding">
+
+					<p class="lead">اِعْرَابْ  atau bentuk perubahan kalimah ditandai dengan macam-macam tanda yaitu :</p>
+                    <h3 style="text-align: left">A. اِعْرَابْ رفع  [khusus isim dan fiil] mempunyai 4 tanda perubahan yaitu:</h3>
+                    <p>
+1. ضمة  [tanda asli] kalau bentuk kalimah isim/ fiilnya berbentuk
+          اسم مُفْرَدْ / جَمَعْ تَكْثِيرْ / جَمَعْ مُؤَنَّثْ سَالِمْ
+          atau مضارع فعل  yang tidak diawali dan tidak diakhiri apa-apa.<br/><br/>
+                2. Ditandai dengan وَاوُ   bila berbentuk  جَمَعْ مُذَكَّرْ سَالِمْdan اَسْمَاءُالْخَمْسَةْ <br/><br/>
+                3. Ditandai dengan اَلِفْ   kalau berbentuk  اسم تَثْنِيَةْ <br/><br/>
+                4. Ditandai dengan  نُونْ kalau berbentuk  اَفْعَالُ الْخَمْسَةْ</p><br/>
+                    <h3 style="text-align: left">B. اِعْرَابْ نصب   [khusus isim dan fiil] mempunyai 5 tanda perubahan yaitu: </h3><p>
+    1. فتحة  [tanda asli] kalau berbentuk اسم مُفْرَدْ / جَمَعْ تَكْثِيرْ
+          atau  مضارع فعل  yang diawali عامل نَاصِبْ  dan tidak diakhiri apa-apa. <br/><br/>
+                 2. Ditandai dengan  كسرة kalau berbentuk  جَمَعْ مُؤَنَّثْ سَالِمْ  <br/><br/>
+                 3. Ditandai dengan يَاءْ    kalau berbentuk  جَمَعْ مُذَكَّرْ سَالِمْ dan  اسم تَثْنِيَةْ<br/><br/>
+                 4. Ditandai dengan اَلِفْ  kalau berbentuk  اَسْمَاءُالْخَمْسَةْ	<br/><br/>
+                 5. Ditandai dengan  حَذْفُ النُونْ (terbuangnya huruf nun dibelakang )
+                      kalau berbentuk  اَفْعَالُ الْخَمْسَةْ	</p><br/>
+                    <h3 style="text-align: left">C. اِعْرَابْ جير  [khusus isim] mempunyai 3 tanda perubahan yaitu:</h3>
+ <p>
+                1.  كسرة(tanda asli) kalau berbentuk اسم مُفْرَدْ / جَمَعْ تَكْثِيرْ / جَمَعْ مُؤَنَّثْ سَالِمْ <br/><br/>
+                2. Ditandai dengan  يَاءْ  kalau berbentuk  جَمَعْ مُذَكَّرْ سَالِمْ / اسم تَثْنِيَةْ / اَسْمَاءُالْخَمْسَةْ<br/><br/>
+                3. Ditandai dengan  فتحة kalau berbentuk  اسم غَيْرُ مُنْصَرِفْ</p><br/>
+     <h3 style="text-align: left">D. اِعْرَابْ جزم  [khusus fiil] mempunyai 3 tanda perubahan yaitu:</h3>
+<p>
+            1.  سكون[tanda asli] kalau berbentuk فعل مضارع صَحِيحْ اَخِيرْ
+               yang diawali dengan عامل جازم <br/><br/>
+            2. Ditandai dengan حَذْفُ حُرُوفْ عِلَّةْ  (terbuangnya huruf ilat dibelakang)
+              kalau berbentuk فعل مضارع مُعْتَالْ اَخِيرْ   yang diawali dengan عامل جازم <br/><br/>
+3.	Ditandai dengan  حذف النون kalau berbentuk اَفْعَالُ الْخَمْسَةْ   yang diawali  dengan  عامل جازم <br/><br/><br/>
+* Dari sini kita mengetahui jawaban mengapa kalimah mu’rob walaupun harokat terahirnya dii’robi dhomah/ fathah/ kasroh/ sukun tidak langsung disebut dengan jelas dhomah/ fathah/ kasroh/ sukun  seperti kalimah mabni yang langsung disebut mabni dhomah/ mabni fathah/ mabni kasroh atau mabni sukun tetapi disebut rofa’/ nasob/ jer/ jazem, yaitu karena I’rob rofak/ nasob/ jer atau jazem tidak hanya mempunyai satu tanda.<br/><br/>
+* Bila isim sudah diawali ال   maka tidak boleh ditanwin.<br/><br/>
+*Kalimah Isim mu’rob hanya bisa di I’robi rofa’ nasob dan jer tidak bisa di I’robi jazem, sedangkan kalimah Fiil, tepatnya fiil mudhori’ hanya bisa di I’robi rofa’ nasob dan jazem dan tidak bisa dii’robi jer, dengan kata lain I’rob jer khusus untuk isim mu’rob dan I’rob jazem khusus untuk fiil.
+Dari semua isim mu’rob diatas yang belum kita ketahui pengertiannya adalah اَسْمَاءُالْخَمْسَةْ dan اسم غَيْرُ مُنْصَرِفْ mari kita lengkapi pengetahuan kita terlebih dahulu.
+</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <footer id="footer">
+            Copyright &copy; 2016 IDWEBDesigner
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+
+
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+        <script src="js/app.min.js"></script>
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/ma/1-6-1/jquery/dark/breadcrumb-demo.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jul 2016 13:39:28 GMT -->
+</html>
