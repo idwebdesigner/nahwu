@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<!-- Mirrored from byrushan.com/projects/ma/1-6-1/jquery/dark/profile-about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jul 2016 13:31:11 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Material Admin</title>
+
+        <!-- Vendor CSS -->
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+        <!-- CSS -->
+        <link href="css/app_1.min.css" rel="stylesheet">
+        <link href="css/app_2.min.css" rel="stylesheet">
+
+        <script src="js/h5utils.js"></script>
+        <script src="js/jquery-2.1.0.min.js"></script>
+        <script>$(function(){
+        $("#contentloader").load("content-message.html");
+        $("#contentloader2").load("content-message-count.html");
+        $("#contentloader3").load("content-right.html");
+        });</script>
+
+    </head>
+
+    <body>
+        <header id="header" class="clearfix">
+            <ul class="h-inner">
+                <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="hi-logo hidden-xs">
+                    <a href="index-2.html">Pangeran Nahwu & Shorof</a>
+                </li>
+
+                <li class="pull-right">
+                    <ul class="hi-menu">
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="#">
+                                <i class="him-icon zmdi zmdi-notifications-none"></i>
+                                <i class="him-counts"><span id="contentloader2"></span></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg pull-right">
+                                <div class="list-group list-group-light">
+                                    <div class="lg-header">
+                                        Messages
+                                    </div>
+
+                                    <article>
+                                      <p style="text-align:center;font-size:1em;"><span id="status"><span id="status"></span></p>
+                                      <ol id="state"></ol>
+                                    </article>
+                                    <script>
+                                    var statusElem  = document.getElementById('status'),
+                                        state               = document.getElementById('state');
+
+                                    function online(event) {
+                                      statusElem.className = navigator.onLine ? 'online' : 'offline';
+                                      statusElem.innerHTML = navigator.onLine ? '' : '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&#39;re offline, check network connection.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content required internet access.';
+                                      state.innerHTML += '&nbsp;';
+                                    }
+
+                                    addEvent(window, 'online', online);
+                                    addEvent(window, 'offline', online);
+                                    online({ type: 'ready' });
+                                    </script>
+
+                                    <div style="margin-top:-30px;" id="contentloader"></div>
+                                    <a class="view-more view-more-light" href="idwebdesigner.html">Powered by IDWEBDesigner</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
+                            <a data-toggle="dropdown" href="#">
+                                <i class="him-icon zmdi zmdi-favorite-outline"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="#"><i class="him-icon zmdi zmdi-more-vert"></i></a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="hidden-xs">
+                                    <a data-ma-action="fullscreen" href="#"><i class="zmdi zmdi-fullscreen"></i> Fullscreen</a>
+                                </li>
+                                <li>
+                                    <a data-ma-action="clear-localstorage" href="developer.html"><i class="zmdi zmdi-code"></i> Developer</a>
+                                </li>
+                                <li>
+                                    <a href="market://details?id=id.web.designer.nahwu.apps"><i class="zmdi zmdi-star"></i> Rating 5 bintang</a>
+                                </li>
+                                <li>
+                                    <a href="update.html"><i class="zmdi zmdi-refresh-sync"></i> Cek update</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="hidden-xs ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
+                            <a href="#"><i class="him-icon zmdi zmdi-comment-alt-text"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <section id="main">
+            <aside id="sidebar" class="sidebar c-overflow">
+                <ul class="main-menu">
+                    <li class="mm-profile sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle" class="media">
+                            <img class="pull-left" src="img/nahwu-round.png" alt="">
+                            <div class="media-body">
+                                <small>Dikembangkan di </small>
+                                Pondok Pesantren Wahid Hasyim Yogyakarta
+                            </div>
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="#">Jl. Wahid Hasyim No.3 Gaten Condongcatur Depok Sleman Yogyakarta 55283</a>
+                            </li>
+                            <li>
+                                <a href="http://ppwahidhasyim.com">ppwahidhasyim.com</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-info-outline"></i> Tentang Aplikasi</a>
+
+                        <ul>
+                            <li><a href="tentang.html">Tentang Pangeran Nahwu <br/>& Shorof</a></li>
+                            <li><a href="project.html">Support This Project</a></li>
+                            <li><a href="idwebdesigner.html">Developer</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="wh.html"><i class="zmdi zmdi-home"></i> Pondok Pesantren Wahid Hasyim Yogyakarta</a></li>
+                    <li class="sub-menu toggled active">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-bookmark-outline"></i> Pendidikan Islam Modern</a>
+                        <ul>
+
+                            <li><a href="wh-mi.html">Madrasah Ibtida'iyah</a></li>
+                            <li><a href="wh-mts.html">Madrasah Tsanawiyah</a></li>
+                            <li><a href="wh-ma.html">Madrasah Aliyah</a></li>
+                            <li><a href="wh-sma.html">SMA Sains Depok</a></li>
+                            <li><a href="wh-tahfidz.html">Madrasah Hufadz wa Tafsir</a></li>
+                            <li><a href="wh-madin.html">Madrasah Diniyah</a></li>
+                            <li><a href="wh-aly.html">Ma'had Aly</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-code"></i> Developer</a>
+
+                        <ul>
+                            <li><a href="dwebdesigner.html">dev@designer.web.id</a></li>
+                            <li><a href="idwebdesigner.html">designer.web.id</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+            <aside id="chat" class="sidebar">
+
+                <div class="chat-search">
+                    <div class="fg-line">
+                        ISTILAH DALAM NAHWU SHOROF
+                    </div>
+                </div>
+
+                <div class="lg-body c-overflow">
+                    <div class="list-group">
+                        <div id="contentloader3"></div>
+                    </div>
+                </div>
+
+                                    <article>
+                                      <p style="margin-left:15px;font-size:0.7em;"><span id="status2"><span id="status"></span></p>
+                                      <ol id="state2"></ol>
+                                    </article>
+                                    <script>
+                                    var statusElem  = document.getElementById('status2'),
+                                        state               = document.getElementById('state2');
+
+                                    function online(event) {
+                                      statusElem.className = navigator.onLine ? 'online' : 'offline';
+                                      statusElem.innerHTML = navigator.onLine ? '' : '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You&#39;re offline, check network connection.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content required internet access.';
+                                      state.innerHTML += '&nbsp;';
+                                    }
+
+                                    addEvent(window, 'online', online);
+                                    addEvent(window, 'offline', online);
+                                    online({ type: 'ready' });
+                                    </script>
+
+            </aside>
+
+            <section id="content">
+                <div class="container container-alt">
+
+                    <div class="card" id="profile-main">
+                        <div class="pm-overview c-overflow">
+
+                            <div class="pmo-pic">
+                                <div class="p-relative">
+                                    <a href="#">
+                                        <img class="img-responsive" src="img/nahwu-round.png" alt="">
+                                    </a>
+
+                                    <div class="dropdown pmop-message">
+                                        <a data-toggle="dropdown" href="#" class="btn bgm-white btn-float z-depth-2">
+                                            <i class="zmdi zmdi-info"></i>
+                                        </a>
+
+                                        <div class="dropdown-menu">
+
+                                            <div class="card-body card-padding">
+                                                <div class="pmo-contact">
+                                                    <ul>
+                                                        <li class="ng-binding"><i class="zmdi zmdi-phone"></i> Pangeran Nahwu<br/> & Shorof (1.5)</li>
+                                                        <li>
+                                                        <i class="zmdi zmdi-pin"></i>
+                                                        <address class="m-b-0 ng-binding">
+                                                        IDWEBDesigner<br/>Yogyakarta
+                                                        </address>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="pmo-stat">
+                                    <h4 class="m-0">Pangeran Nahwu & Shorof</h4>
+                                    Cara Cepat Baca Kitab Kuning
+                                </div>
+                            </div>
+
+                            <div class="pmo-block pmo-contact hidden-xs">
+                                <h2>Pondok Pesantren Wahid Hasyim Yogyakarta</h2>
+
+                                <ul>
+                                    <li><i class="zmdi zmdi-phone"></i> (0274) 484284</li>
+                                    <li><i class="zmdi zmdi-email"></i> info@ppwahidhasyim.com</li>
+                                    <li><i class="zmdi zmdi-facebook-box"></i> ppwahidhasyim</li>
+                                    <li><i class="zmdi zmdi-twitter"></i> @ppwahidhasyim (twitter.com/ppwahidhasyim)</li>
+                                    <li>
+                                        <i class="zmdi zmdi-pin"></i>
+                                        <address class="m-b-0 ng-binding">
+                                            Jl. Wahid Hasyim No. 3<br>
+                                            Gaten Condongcatur Depok<br>
+                                            Sleman Yogyakarta
+                                        </address>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="pm-body clearfix">
+                            <ul class="tab-nav tn-justified">
+                                <li class="active"><a href="index.html">INFO</a></li>
+                                <li><a href="index-2.html">NAHWU SHOROF</a></li>
+                                <li><a href="index-3.html">HELP</a></li>
+                            </ul>
+
+
+                            <div class="pmb-block">
+                                <div class="pmbb-header">
+                                    <h2><i class="zmdi zmdi-equalizer m-r-10"></i> Summary</h2>
+
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a data-ma-action="profile-edit" href="#">Edit</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        Sed eu est vulputate, fringilla ligula ac, maximus arcu. Donec sed felis vel
+                                        magna mattis ornare ut non turpis. Sed id arcu elit. Sed nec sagittis tortor.
+                                        Mauris ante urna, ornare sit amet mollis eu, aliquet ac ligula. Nullam dolor
+                                        metus, suscipit ac imperdiet nec, consectetur sed ex. Sed cursus porttitor leo.
+                                    </div>
+
+                                    <div class="pmbb-edit">
+                                        <div class="fg-line">
+                                            <textarea class="form-control" rows="5" placeholder="Summary...">Sed eu est vulputate, fringilla ligula ac, maximus arcu. Donec sed felis vel magna mattis ornare ut non turpis. Sed id arcu elit. Sed nec sagittis tortor. Mauris ante urna, ornare sit amet mollis eu, aliquet ac ligula. Nullam dolor metus, suscipit ac imperdiet nec, consectetur sed ex. Sed cursus porttitor leo.</textarea>
+                                        </div>
+                                        <div class="m-t-10">
+                                            <button class="btn btn-default btn-sm">Save</button>
+                                            <button data-ma-action="profile-edit-cancel" class="btn btn-link btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmb-block">
+                                <div class="pmbb-header">
+                                    <h2><i class="zmdi zmdi-account m-r-10"></i> Basic Information</h2>
+
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a data-ma-action="profile-edit" href="#">Edit</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        <dl class="dl-horizontal">
+                                            <dt>Full Name</dt>
+                                            <dd>Mallinda Hollaway</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Gender</dt>
+                                            <dd>Female</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Birthday</dt>
+                                            <dd>June 23, 1990</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Martial Status</dt>
+                                            <dd>Single</dd>
+                                        </dl>
+                                    </div>
+
+                                    <div class="pmbb-edit">
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Full Name</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control"
+                                                           placeholder="eg. Mallinda Hollaway">
+                                                </div>
+
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Gender</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <select class="form-control">
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Birthday</dt>
+                                            <dd>
+                                                <div class="dtp-container dropdown fg-line">
+                                                    <input type='text' class="form-control date-picker"
+                                                           data-toggle="dropdown" placeholder="Click here...">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Martial Status</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <select class="form-control">
+                                                        <option>Single</option>
+                                                        <option>Married</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                        </dl>
+
+                                        <div class="m-t-30">
+                                            <button class="btn btn-default btn-sm">Save</button>
+                                            <button data-ma-action="profile-edit-cancel" class="btn btn-link btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmb-block">
+                                <div class="pmbb-header">
+                                    <h2><i class="zmdi zmdi-phone m-r-10"></i> Contact Information</h2>
+
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a data-ma-action="profile-edit" href="#">Edit</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        <dl class="dl-horizontal">
+                                            <dt>Mobile Phone</dt>
+                                            <dd>00971 12345678 9</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Email Address</dt>
+                                            <dd>malinda.h@gmail.com</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Twitter</dt>
+                                            <dd>@malinda</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Skype</dt>
+                                            <dd>malinda.hollaway</dd>
+                                        </dl>
+                                    </div>
+
+                                    <div class="pmbb-edit">
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Mobile Phone</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control"
+                                                           placeholder="eg. 00971 12345678 9">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Email Address</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="email" class="form-control"
+                                                           placeholder="eg. malinda.h@gmail.com">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Twitter</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control" placeholder="eg. @malinda">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Skype</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input type="text" class="form-control"
+                                                           placeholder="eg. malinda.hollaway">
+                                                </div>
+                                            </dd>
+                                        </dl>
+
+                                        <div class="m-t-30">
+                                            <button class="btn btn-default btn-sm">Save</button>
+                                            <button data-ma-action="profile-edit-cancel" class="btn btn-link btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <footer id="footer">
+            Copyright &copy; 2016 IDWEBDesigner
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+
+
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+        <script src="js/app.min.js"></script>
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/ma/1-6-1/jquery/dark/profile-about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jul 2016 13:31:21 GMT -->
+</html>
